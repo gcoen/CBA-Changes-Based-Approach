@@ -1,0 +1,440 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title>WPP Presentation</title>
+  <meta name="generator" content="LibreOffice 7.3.7.2 (Linux)"/>
+  <meta name="author" content="gcoen"/>
+  <meta name="created" content="2022-12-18T21:23:26"/>
+  <meta name="changedby" content="gcoen"/>
+  <meta name="changed" content="2022-12-18T21:23:26"/>
+  <meta name="AppVersion" content="14.0000"/>
+  <meta name="KSOProductBuildVer" content="1033-10.1.0.6757"/>
+  <meta name="PresentationFormat" content="Widescreen"/>
+  <meta name="Slides" content="27"/>
+</head>
+<body>
+<h1>Changes Based Approach
+</h1>
+<h2>Changes ready,</h2>
+<h2>starting with data</h2>
+<h1 style="page-break-before:always; ">What is CBA?</h1>
+<ul>
+<li>Develop software well. With high quality.</li>
+<li>A different way of developing software</li>
+<ul>
+<li>based on years of experience, analysis and study</li>
+</ul>
+<li>Summary:</li>
+<ul>
+<li>Ready for changes</li>
+<li>Data is the primary focus</li>
+<li>Progressive adaptation to customer needs</li>
+<li><b>Excellence</b></li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Methodologies</h1>
+<ul>
+<li>Methodologies are confused with software: people believe that applying the methodology will necessarily get good results</li>
+<li>or with magic</li>
+<li>They become bureaucracies.</li>
+<li>They end up helping to sell useless tools</li>
+<li>What counts are the precepts: the Agile manifesto, the microservice concept, the spirit of developing including testing</li>
+</ul>
+<h1 style="page-break-before:always; ">The software maker is a craftsman</h1>
+<ul>
+<li>Concerned about quality</li>
+<li>It has its own way of working and organizing, his method, which is unique to each one</li>
+<li>He has his way of dealing with the team.</li>
+<li>His preferences and skills</li>
+</ul>
+<h1 style="page-break-before:always; ">CBA: how to do it</h1>
+<ul>
+<li>Do not model a reality that is fluid and diffuse</li>
+<li>Focus on data</li>
+<ul>
+<li>Organized by <u>documents</u></li>
+<li>Must have the highest quality: validation, compliance with standards, updated, documented, identified, with history, references, changes tracking</li>
+</ul>
+<li>Flows: what you do with the data</li>
+<ul>
+<li>Flows will be implemented progressively starting with the data: &quot;what do you do with this document&quot;</li>
+</ul>
+<li><u>Changes</u>: Software is not thought of as a complete solution to a problem. It is thought of as a succession of changes. It has to be developed thinking that it will change:</li>
+<ul>
+<li>To document</li>
+<li>Isolate features</li>
+<li>Organize into microservices</li>
+<li>Do not think about solving a complex structure at once. Instead implement microservices (or modules) that:</li>
+<h2>1. Will do just one feature correctly</h2>
+<h2>2. Have the least complexity</h2>
+<h2>3. Will be changed when needed</h2>
+<h2>4. Changes must not affect others. Independence.</h2>
+<h2>5. Eventually can be reused. As modules or as microservices.</h2>
+<h2>6. Over time will build up a rich library of resources</h2>
+<li>Simplicity</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Script (1)</h1>
+<ul>
+<li>(Manning): <b>do not model a changing reality that is changing. Track it by coding software.</b></li>
+<li>1. Short talk: identify roles and entities, simple flow view</li>
+<ul>
+<li>Roles will correspond to <u>files</u>: customers, parts, products...</li>
+<li>Flow will define a first prototype, &quot;toy&quot;</li>
+<li>A brief talkcan/should be complemented by a study of the enterprise's references. This is essential for sizing the project and having an architectural idea.</li>
+</ul>
+<li>2. Toy</li>
+<ul>
+<li>Develop a program as simple as possible that performs a minimal flow: purchase of a product, deposit into a bank account, admission to a hospital</li>
+<li>Minimal interface, probably CLI</li>
+<li>It works, it can be shown to the customer as a simplistic model. It certainly has no bugs.</li>
+</ul>
+<li>3. The data</li>
+<ul>
+<li>Identify the documents that are used in the flow</li>
+<li>and the <u>events</u> that are generated or generate documents</li>
+<li><u>Fully</u> detail the document: date, identification, fields, data types, validation (program name, standard), input form, output format(s), applicable rules and regulations, history, microservice that handles it, changes that have occurred</li>
+<ul>
+<li>Format the document in a schma: Json, xml...</li>
+<li>Develop the necessary programs: input, validation, output. Tests.</li>
+<li>The program must simply go through the definition and execute: input, validation, <u>triggering the program</u> that handles the document.</li>
+</ul>
+<li>Continuously confirm with the customer</li>
+<li>Save definitions (schema) and data in a document file (MongoDB, Redis...). Flows in graph database.</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Script (2)</h1>
+<h2>4. Design starts here (or before):</h2>
+<ul>
+<ul>
+<li>UI</li>
+<li>Visual programming</li>
+<li>Follows a parallel path with software development</li>
+<h2>5. The flow(s):</h2>
+<li>Having detailed documents, with input, validation, output ready, follow the flow from an initial document/event</li>
+<li>Dialogue with the customer identifying the document flow step by step</li>
+<ul>
+<li>Look for the simplest and most generic path, leave exceptions for a second pass, follow the main flow</li>
+<li>Implement each of the steps, with customer. Tests.</li>
+<li>Repeat for each document</li>
+<li>Create the files/records whose need appears during the flow</li>
+</ul>
+<li>Validate the entire flow with the client</li>
+<li>Do a <u>security</u> review at each step</li>
+<li>Implement exceptions one by one, validating with the client</li>
+<ul>
+<li>These will be cases of change.</li>
+<li>The entire life of the software will be implementing <u>changes</u>: fixes, new features, introduced modifications, regulations.</li>
+</ul>
+<li>In each case, consider creating a microservice or module. Document it.</li>
+<h2><i>6. Changes</i></h2>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Changes </h1>
+<h2><b>From then on, it remains to continuously implement changes</b></h2>
+<ul>
+<li>Support and development are one and the same</li>
+<li>All software steps are software:</li>
+<ul>
+<li>Deploy</li>
+<li>Devops, CI/CD</li>
+<li>Infra as software</li>
+<li>Tests and homologation</li>
+<li><u>Independent</u> security review</li>
+<li>quality review</li>
+</ul>
+<li>Over time, big changes will emerge: strategy and architecture have changed or the system has gained complexity:</li>
+<ul>
+<li><u>Refactoring</u> from a proven architecture</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Quality</h1>
+<ul>
+<li>It's a spirit</li>
+<li>exhaustive tests</li>
+<ul>
+<li>and more tests</li>
+</ul>
+<li>Review, evaluation, rejection:</li>
+<ul>
+<li>by pairs</li>
+<li>by boss</li>
+<li>by the customer</li>
+</ul>
+<li>Based on the principles and good practices of quality standards</li>
+<ul>
+<li>ISO/IEC 25010</li>
+<li>(ISO/IEC 9126)</li>
+<li>Open Group Application Platform Service Qualities</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Tools</h1>
+<ul>
+<li>The minimum</li>
+<li>Which the craftsman is comfortable with</li>
+<li>Editor, compiler, link, git</li>
+<li>Databases:</li>
+<ul>
+<li>documents based, key-value, graph when needed</li>
+<li>Redis, Mongodb, Neo4j</li>
+</ul>
+<li>Avoid:</li>
+<ul>
+<li>relational database</li>
+<li>Object orientation</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Deploy: to be thought before</h1>
+<ul>
+<li>Seek to do it 100% software</li>
+<li>Safety</li>
+<li>Contingency</li>
+<li><i>Think about an edge-computing model</i></li>
+</ul>
+<h1 style="page-break-before:always; ">Business model</h1>
+<ul>
+<li>The product: software tailored to the customer, without parameterization or customization. High quality. Very few bugs. Changes at will.</li>
+<li>Investment:</li>
+<ul>
+<li>Make a toy.</li>
+<li>Then develop the entire software, based on references, or on a client who agrees to be the guinea pig.</li>
+<li>Investing in quality: tests, more tests, revision</li>
+</ul>
+<li>Sell ​​with cost:</li>
+<ul>
+<li>1. The license to use</li>
+<li>2. Continuous maintenance service</li>
+<ul>
+<li>Support</li>
+<li>Bug fixes [minimized by initial quality investment]</li>
+<li>Changes, with a variable rate depending on the change</li>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Changes Based Approach</h1>
+<h2>Preparado para Mudanças,</h2>
+<h2>começando pelos dados</h2>
+<h1 style="page-break-before:always; ">O que é</h1>
+<ul>
+<li>Desenvolver software bem. Com alta qualidade.</li>
+<li>Uma forma diferente de desenvolver software</li>
+<ul>
+<li>baseada em experiência, análise e estudo.</li>
+</ul>
+<li>Resumo:</li>
+<ul>
+<li>Pensado para mudanças</li>
+<li>Prioridade aos dados</li>
+<li>Desenvolvimento por adaptação progressiva ao cliente</li>
+<li><b>Excelência</b></li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Metodologias</h1>
+<ul>
+<li>Confundidas com software:</li>
+<ul>
+<li>acredita-se nelas, acredita-se que aplicar a metodologia vai necessariamente dar bons resultados</li>
+</ul>
+<li>Ou com magia</li>
+<li>Viram burocracias</li>
+<li>Acabam servindo para vender ferramentas inúteis</li>
+<li>O que vale são os <u>preceitos</u>: o manifesto de Agile, o conceito de microserviço, o espírito de desenvolver incluindo os testes</li>
+</ul>
+<h1 style="page-break-before:always; ">O fazedor de software é um artesão</h1>
+<ul>
+<li>Preocupado com qualidade</li>
+<li>Tem sua maneira de trabalhar e de se organizar; seu método, que é próprio de cada um</li>
+<li>Tem sua forma de lidar com a equipe</li>
+<li>Suas preferências e habilidades</li>
+</ul>
+<h1 style="page-break-before:always; ">Como fazer</h1>
+<ul>
+<li>Idéia: não modelar uma realidade que é fluida e difusa</li>
+<li>Foco nos dados</li>
+<ul>
+<li>Organizados em <u>documentos</u></li>
+<li>Devem ter o máximo de qualidade: validação, compliance com normas, atualizados, documentados, identificados, com história, referências, rastreamento de mudanças</li>
+</ul>
+<li>Fluxos: é aquilo que se faz com os dados</li>
+<ul>
+<li>Os fluxos serão implementados progressivamente a partir dos dados: &quot;o que se faz com este documento&quot;</li>
+</ul>
+<li><u>Mudanças</u>: o software não é pensado como uma solução completa para um problema. É pensado como uma sucessão de mudanças. Tem que ser desenvolvido pensando que vai mudar:</li>
+<ul>
+<li>Documentar</li>
+<li>Isolar funcionalidades</li>
+<li>Organizar em microserviços</li>
+<li>Não pensar em resolver de uma vez uma estrutura complexa. Em vez disso implementar microserviços (ou módulos) que:</li>
+<h2>1. Farão corretamente uma só funcionalidade</h2>
+<h2>2. Tem o mínimo de complexidade</h2>
+<h2>3. Serão mudados quando necessário</h2>
+<h2>4. Sua mudança não deve afetar outras. Independência.</h2>
+<h2>5. Eventualmente poderão ser re-usados. Como módulos ou como microserviços.</h2>
+<h2>6. Ao longo do tempo vão se constituir numa rica biblioteca de recursos</h2>
+<li>Simplicidade</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Roteiro (1)</h1>
+<ul>
+<li>(Manning): <b>não modelar uma realidade que é mutante. Seguir a trilha codificando o software.</b></li>
+<h2>1. Breve conversa: identificar papéis e entidades, visão simples do fluxo</h2>
+<ul>
+<li>Papéis vão corresponder a &quot;cadastros&quot;: clientes, peças, produtos...</li>
+<li>Fluxo vai definir um primeiro protótipo, &quot;toy&quot;</li>
+<li>Breve conversa pode/deve ser complementada por estudo de referências do empreendimento. Isto é essencial para dimensionar o projeto e ter uma idéia de arquitetura.</li>
+<h2>2. Toy</h2>
+<li>Desenvolver um programa o mais simples possível que realiza um fluxo mínimo: compra de um produto, depósito numa conta bancária, admissão num hospital</li>
+<li>Interface mínima, provavelmente CLI</li>
+<li>Funciona, pode ser mostrado ao cliente como modelo simplístico. Certamente não tem bugs.</li>
+<h2>3. Os dados</h2>
+<li>Identificar os <u>documentos</u> que são usados no <u>fluxo</u></li>
+<ul>
+<li>e os <u>eventos</u> que são gerados ou geram documentos</li>
+</ul>
+<li>Detalhar <u>completamente</u> o documento: data, identificação, campos, tipos de dados, validação (nome do programa, norma), forma de entrada, formato de saída(s), regras e regulamentos aplicáveis, histórico, microserviço que trata, mudanças ocorridas</li>
+<ul>
+<li>Formatar num padrão (schema): Json, xml...</li>
+<li>Desenvolver os programas necessários: entrada, validação, saída. Testes.</li>
+<li>O programa deve simplesmente percorrer a definição e executar: entrada, validação, <u>disparo do programa</u> que trata o documento.</li>
+<h2>Confirmar continuamente com o cliente</h2>
+<h2>Guardar as definições (schema) e os dados em arquivo de documentos (MongoDB, Redis...). Os fluxos em grafos.</h2>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Roteiro (2)</h1>
+<h2>4. O design começa aqui (ou antes):</h2>
+<ul>
+<ul>
+<li>UI</li>
+<li>Programação visual</li>
+<li>Segue uma trilha paralela ao desenvolvimento do software</li>
+<h2>5. O(s) fluxo(s):</h2>
+<li>Tendo os documentos detalhados, com entrada, validação, saída prontos, seguir o fluxo a partir de um documento/evento inicial</li>
+<li>Diálogo com o cliente identificando passo a passo o fluxo do documento</li>
+<ul>
+<li>Procurar o caminho mais simples e mais genérico, deixar exceções para uma segunda passagem, seguir o fluxo principal</li>
+<li>Implementar cada uma das etapas, com confirmação pelo cliente. Testes.</li>
+<li>Repetir para cada documento</li>
+<li>Criar os cadastros cuja necessidade for aparecendo durante o fluxo</li>
+</ul>
+<li>Validar o fluxo todo com o cliente</li>
+<li>Fazer uma revisão de segurança em cada etapa</li>
+<li>Implementar uma a uma as exceções, validando com o cliente</li>
+<ul>
+<li>Estes serão casos de mudanças.</li>
+<li><u>A vida inteira do software será implementar mudanças</u>: correções, novas funcionalidades, modificações introduzidas, regulamentações.</li>
+</ul>
+<li>Em cada caso, avaliar criar um microserviço ou um módulo. Documentar.</li>
+<h2><i>6. Mudanças</i></h2>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Mudanças </h1>
+<h2><b>A partir daí resta implementar mudanças continuamente</b></h2>
+<h2><b></b></h2>
+<ul>
+<li>Suporte e desenvolvimento são uma coisa só</li>
+<li>Todas as etapas do software são software:</li>
+<ul>
+<li>Deploy</li>
+<li>Devops, CI/CD</li>
+<li>Infra as software</li>
+<li>Testes e homologação</li>
+<li>Revisão <u>independente</u> de segurança</li>
+<li>Revisão de qualidade</li>
+</ul>
+<li>Com o tempo surgirão mudanças grandes. Estratégia e arquitetura mudaram ou o sistema ganhou complexidade:</li>
+<ul>
+<li><u>Refactoring</u> a partir de uma arquitetura que já foi comprovada</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Qualidade</h1>
+<ul>
+<li>É um espírito</li>
+<li>Testes exaustivos</li>
+<ul>
+<li>e mais testes</li>
+</ul>
+<li>Revisão, avaliação, rejeição:</li>
+<ul>
+<li>por pares</li>
+<li>por chefe</li>
+<li>pelo cliente</li>
+</ul>
+<li>Fundamentada nos princípios e boas práticas das normas de qualidade</li>
+<ul>
+<li>ISO/IEC 25010</li>
+<li>(ISO/IEC 9126)</li>
+<li>Open Group Application Platform Service Qualities</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Ferramentas</h1>
+<ul>
+<li>O mínimo possível</li>
+<li>Com as quais o artesão está confortável</li>
+<li>Editor, compilador, link, git</li>
+<li>Bancos de dados:</li>
+<ul>
+<li>de documentos, key-value, graph quando necessário</li>
+<li>Redis, Mongodb, Neo4j</li>
+</ul>
+<li>Evitar:</li>
+<ul>
+<li>Banco de dados relacional</li>
+<li>Orientação a objetos</li>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Deploy: a ser pensado antes</h1>
+<ul>
+<li>Procurar fazê-lo total software</li>
+<li>Segurança</li>
+<li>Contingência</li>
+<li><i>Pensar num modelo edge-computing</i></li>
+</ul>
+<h1 style="page-break-before:always; ">Modelo de negócio</h1>
+<ul>
+<li>O produto: software adequado ao cliente, sem parametrização ou customização. Alta qualidade. Pouquíssimos bugs. Mudanças a vontade.</li>
+<li>Investimento:</li>
+<ul>
+<li>Fazer um toy.</li>
+<li>Depois desenvolver o software todo, a partir de referências, ou de um cliente que topar ser o cobaia.</li>
+<li>Investir em qualidade: testes, mais testes, revisão</li>
+</ul>
+<li>Vender com custo:</li>
+<h2>1. A licença de uso</h2>
+<h2>2. O serviço de manutenção contínua</h2>
+<ul>
+<ul>
+<li>Suporte</li>
+<li>Correção de erros [minimizada pelo investimento em qualidade inicial]</li>
+<li>Mudanças, com taxa variável conforme a mudança</li>
+</ul>
+</ul>
+</ul>
+<h1 style="page-break-before:always; ">Geraldo Coen</h1>
+<h2>Geraldo Coen</h2>
+<h2>coen.geraldo@gmail.com</h2>
+<h2>http://www.coeninfo.com/</h2>
+<h2>https://www.linkedin.com/in/geraldo-coen-495130/</h2>
+<h1 style="page-break-before:always; ">Referências</h1>
+<ul>
+<li>Data-Oriented Programming, Yehonathan Sharvit</li>
+<h2>https://www.manning.com/books/data-oriented-programming</h2>
+<li>Introduction to Interface-Driven Development (IDD)</li>
+<h2>https://dzone.com/articles/introduction-to-interface-driven-development-idd</h2>
+<li>A Complete Guide to Agile Methodologies and Their Operation</li>
+<h2>https://dzone.com/articles/a-complete-guide-to-agile-methodologies-and-their</h2>
+</ul>
+<h1 style="page-break-before:always; ">Reduce System Complexity with Data-Oriented Programming</h1>
+<h2>Complexity is one of the main difficulties in the development of successful software systems. Modern programming languages and frameworks make it easy to develop and deploy our code quickly, but as the code base grows, complexity makes it challenging to add new features.</h2>
+<h2>Data-oriented programming is a paradigm that aims at reducing the complexity of information systems such as back-end applications, web services, web workers, and front-end applications by rethinking data. Data-oriented programming treats data as an immutable value that is manipulated by general-purpose functions. Moreover, data is validated à la carte.</h2>
+<h2>In this talk, we illustrate the principles of data-oriented programming in the context of a software production system. After attending this talk, you will be able to apply data-oriented programming principles in your preferred programming language and reduce the complexity of the systems you build.</h2>
+<h2><b>Takeaways</b></h2>
+<h2>1. Apply Data-Oriented Programming principles in your preferred programming language.</h2>
+<h2>2. Apply data validation techniques without using static types.</h2>
+<h2>3. Represent data with immutable data structures.</h2>
+<h2>4. Manipulate data with generic functions.</h2>
+</body>
+</html>
